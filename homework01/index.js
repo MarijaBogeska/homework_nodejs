@@ -1,8 +1,6 @@
-import { error } from "console";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { promisify } from "util";
 
 //index.js path
 const filePath = fileURLToPath(import.meta.url);

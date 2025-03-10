@@ -30,26 +30,31 @@ export const addUser = (user) => {
   const newUser = {
     id: newUserId,
     name: user.name,
-    userName: user.username,
+    username: user.username,
     email: user.email,
   };
-  parsedUsers.push(newUser);
-  fs.writeFileSync("users.json", JSON.stringify(parsedUsers), null, 2);
-  fs.appendFile(
-    "logs.txt",
-    `\n[${new Date()}] Action performed: Added User ${JSON.stringify(
-      user,
-      null,
-      2
-    )}`,
-    (error) => {
-      if (error) {
-        console.log("error", error);
-      } else {
-        console.log("text written");
+  const userExists = parsedUsers.some((user) => user.email === user.email);
+  if (userExists) {
+    console.log(`Error: User with email "${user.email}" already exists.`);
+  } else {
+    parsedUsers.push(newUser);
+    fs.writeFileSync("users.json", JSON.stringify(parsedUsers), null, 2);
+    fs.appendFile(
+      "logs.txt",
+      `\n[${new Date()}] Action performed: Added User ${JSON.stringify(
+        user,
+        null,
+        2
+      )}`,
+      (error) => {
+        if (error) {
+          console.log("error", error);
+        } else {
+          console.log("User is successfully created!");
+        }
       }
-    }
-  );
+    );
+  }
 };
 const newUser = {
   name: "Bob",
@@ -82,14 +87,14 @@ export function editUser(id, newName, newUsername) {
         if (error) {
           console.log("error", error);
         } else {
-          console.log("text written");
+          console.log("User is successfully editeted!");
         }
       }
     );
 
     console.log(parsedUsers[userIndex]);
   } else {
-    console.log("there is not user with that id");
+    console.log("There is not user with that id");
   }
 }
 
@@ -103,18 +108,20 @@ export function deleteUser(id) {
     parsedUsers.splice(userIndex, 1);
     fs.appendFile(
       "logs.txt",
-      `\n[${new Date()}] Action performed: Deleted User ${parsedUsers[userIndex]}`,
+      `\n[${new Date()}] Action performed: Deleted User ${
+        parsedUsers[userIndex]
+      }`,
       (error) => {
         if (error) {
           console.log("error", error);
         } else {
-          console.log("text written");
+          console.log("User is successfully deleted!");
         }
       }
     );
     fs.writeFileSync("users.json", JSON.stringify(parsedUsers), null, 2);
   } else {
-    console.log("there is not user with that id");
+    console.log("There is not user with that id");
   }
 }
 
@@ -127,7 +134,7 @@ export function deleteAllUsers() {
       if (error) {
         console.log("error", error);
       } else {
-        console.log("text written");
+        console.log("All users are successfully deleted!");
       }
     }
   );
