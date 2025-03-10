@@ -9,7 +9,7 @@ import {
 let user = {
   name: "Jill",
   username: "jill_123",
-  email: "Nathan@yesenia.net",
+  email: "fafa@yesenia.net",
 };
 
 // greetUser(user.name);

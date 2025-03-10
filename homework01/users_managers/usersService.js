@@ -33,7 +33,9 @@ export const addUser = (user) => {
     username: user.username,
     email: user.email,
   };
-  const userExists = parsedUsers.some((user) => user.email === user.email);
+  const userExists = parsedUsers.some(
+    (existingUser) => existingUser.email === user.email
+  );
   if (userExists) {
     console.log(`Error: User with email "${user.email}" already exists.`);
   } else {

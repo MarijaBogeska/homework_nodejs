@@ -23,3 +23,8 @@
   "username": "marijaBogeska",
   "email": "Julianne.OConner@kory.org"
 }
+[Mon Mar 10 2025 18:50:08 GMT+0100 (Средноевропско стандардно време)] Action performed: Added User {
+  "name": "Jill",
+  "username": "jill_123",
+  "email": "fafa@yesenia.net"
+}
