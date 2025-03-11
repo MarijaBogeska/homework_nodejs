@@ -32,10 +32,15 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       const data = new URLSearchParams(body);
       const inputName = data.get("inputName");
-      const formatedName=inputName.charAt(0).toUpperCase() + inputName.slice(1)
       res.writeHead(200, { "content-type": "text/html" });
-      res.end(`<p>Student name: ${formatedName}</p>`);
-      emitter.emit("studentAdded",formatedName);
+      if (!inputName) {
+        res.end("Error: Student name cannot be empty.");
+      } else {
+        const formatedName =
+          inputName.charAt(0).toUpperCase() + inputName.slice(1);
+        res.end(`<p>Student name: ${formatedName}</p>`);
+        emitter.emit("studentAdded", formatedName);
+      }
     });
   } else {
     res.writeHead(404, { "content-type": "text/plain" });
