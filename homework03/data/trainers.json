@@ -1,0 +1,38 @@
+[
+  {
+    "id": "6a1e1c78-d4f2-4b6a-9f5e-4f2c9e8d8d8a",
+    "firstName": "Emily",
+    "lastName": "Smith",
+    "email": "emily.smith@example.com",
+    "isCurrentlyTeaching": false,
+    "timeEmployed": "1 year 2 months",
+    "coursesFinished": 10
+  },
+  {
+    "id": "827abd98-3e3f-4b48-9c92-d47b4d6825d1",
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "email": "michael.brown@example.com",
+    "isCurrentlyTeaching": true,
+    "timeEmployed": "3 years",
+    "coursesFinished": 25
+  },
+  {
+    "id": "c41b77e6-6b7d-4a32-b4fd-3a9a2f6f6e3e",
+    "firstName": "Sarah",
+    "lastName": "Wilson",
+    "email": "sarah.wilson@example.com",
+    "isCurrentlyTeaching": false,
+    "timeEmployed": "6 months",
+    "coursesFinished": 5
+  },
+  {
+    "id": "db0a1a7c-4b6d-4691-8f5d-5a2c7e7e5a5a",
+    "firstName": "David",
+    "lastName": "Martinez",
+    "email": "david.martinez@example.com",
+    "isCurrentlyTeaching": true,
+    "timeEmployed": "4 years 1 month",
+    "coursesFinished": 30
+  }
+]
