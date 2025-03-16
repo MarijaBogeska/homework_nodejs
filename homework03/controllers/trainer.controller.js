@@ -73,11 +73,4 @@ export default class TrainerController {
       res.status(400).send({ message: error.message });
     }
   }
-  //currently teaching
-  static async currentlyTeaching(req, res) {
-    try {
-    } catch (error) {
-      res.status(400).send({ message: error.message });
-    }
-  }
 }

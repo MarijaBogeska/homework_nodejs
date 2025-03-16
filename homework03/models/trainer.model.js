@@ -15,11 +15,13 @@ export default class TrainerModel {
   // I. GET ALL TRAINERS
   static async getAllTrainers(currentlyActive, sortBy) {
     let allTrainers = await DataService.readData(trainersPath);
+    // IS CURRENTLY TEACHING
     if (typeof currentlyActive === "boolean") {
      allTrainers= allTrainers.filter(
         (trainer) => trainer.isCurrentlyTeaching === currentlyActive
       );
     }
+    //SORTING
     if (sortBy === "coursesAsc") {
       allTrainers.sort((a, b) => a.coursesFinished - b.coursesFinished);
     } else if (sortBy === "coursesDesc") {
