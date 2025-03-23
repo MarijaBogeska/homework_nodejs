@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "6cf29595-b750-4f8e-8c66-d62bf125001d",
+		"name": "Homework04_Recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43059486"
+	},
+	"item": [
+		{
+			"name": "Get Recipes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes?category=dessert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "dessert"
+						},
+						{
+							"key": "difficulty",
+							"value": "medium",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/recipe/67dc710316908123f191c07c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"recipe",
+						"67dc710316908123f191c07c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vegetarian",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/vegetarian",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"vegetarian"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/search?title=pancakes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "pancakes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Greek Salad\",\r\n    \"description\": \"A fresh and healthy Greek salad\",\r\n    \"ingredients\": [\"tomato\", \"cucumber\", \"feta cheese\", \"olive oil\", \"olives\"],\r\n    \"instructions\": [\r\n      \"Chop vegetables\",\r\n      \"Mix all ingredients\",\r\n      \"Drizzle with olive oil\",\r\n      \"Serve fresh\"\r\n    ],\r\n    \"cookingTime\": 10,\r\n    \"difficulty\": \"easy\",\r\n    \"isVegetarian\": true,\r\n    \"category\": \"lunch\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"title\": \"Chocolate Brownies\",\r\n    \"description\": \"New UPDATE\",\r\n    \"ingredients\": [\"flour\", \"cocoa powder\", \"sugar\", \"butter\", \"eggs\"],\r\n    \"instructions\": [\r\n      \"Mix ingredients\",\r\n      \"Pour into a pan\",\r\n      \"Bake for 25 minutes\",\r\n      \"Let cool and serve\"\r\n    ]\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/67dc710316908123f191c085",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"67dc710316908123f191c085"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"title\": \"Chocolate Brownies\",\r\n    \"description\": \"New Update\",\r\n    \"ingredients\": [\"flour\", \"cocoa powder\", \"sugar\", \"butter\", \"eggs\"],\r\n    \"instructions\": [\r\n      \"Mix ingredients\",\r\n      \"Pour into a pan\",\r\n      \"Bake for 25 minutes\",\r\n      \"Let cool and serve\"\r\n    ]\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/recipes/67dc710316908123f191c084",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"recipes",
+						"67dc710316908123f191c084"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

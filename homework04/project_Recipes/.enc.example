@@ -1,0 +1,5 @@
+MONGO_USERNAME=your_username
+MONGO_PASSWORD=your_password
+MONGO_CLUSTER=your_cluster_url
+MONGO_DATABASE=your_database_name
+PORT=3000
