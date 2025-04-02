@@ -18,12 +18,12 @@ const productSchema = new Schema({
   },
   price: {
     type: Number,
-    min: 1,
+    min: 0,
     required: [true, "price is required"],
   },
   quantity: {
     type: Number,
-    min: 1,
+    min: 0,
     required: [true, "quantity is required"],
   },
   reviews: [

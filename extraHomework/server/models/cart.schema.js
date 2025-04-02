@@ -8,8 +8,9 @@ const cartSchema = new Schema({
   },
   totalPrice: {
     type: Number,
+    min: 0,
   },
 });
 
-const Cart = model("cart",cartSchema,"shoppingCarts");
+const Cart = model("cart", cartSchema, "shoppingCarts");
 export default Cart;
