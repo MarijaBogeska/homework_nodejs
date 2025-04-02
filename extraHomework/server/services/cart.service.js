@@ -5,7 +5,11 @@ export default class CartService {
     return await Cart.find({});
   }
   async getById(id) {
-    return await Cart.findById(id);
+    const cart = await Cart.findById(id);
+    if (!cart) {
+      throw new Error("Cart not found");
+    }
+    return cart;
   }
   async addToCart(cartId, body) {
     const cart = await Cart.findById(cartId);
@@ -18,4 +22,5 @@ export default class CartService {
     await cart.save();
     return cart;
   }
+ 
 }

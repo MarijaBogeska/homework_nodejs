@@ -10,7 +10,15 @@ export default class CartController {
     try {
       const id = req.params.id;
       const cart = await this.cartService.getById(id);
-      res.send(cart);
+      res.status(200).send(cart);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  }
+  async getAll(req, res) {
+    try {
+      const carts = await this.cartService.getAll();
+      res.status(200).send(carts);
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
@@ -18,24 +26,35 @@ export default class CartController {
   async addToCart(req, res) {
     try {
       const cartId = req.params.id;
-      const body = req.body;
-      const products = body.products;
-      let totalPrice = 0;
-      for (const product of products) {
-        let productInCart = await this.productService.getById(product);
+      const cart = await this.cartService.getById(cartId);
+      const { products } = req.body;
 
-        if (productInCart) {
+      if (!cartId) {
+        return res.status(400).send({ message: "Invalid cart ID" });
+      }
+
+      let totalPrice = Number(cart.totalPrice) || 0;
+      let updatedProducts = [...cart.products];
+
+      for (const productId of products) {
+        const productInCart = await this.productService.getById(productId);
+        if (productInCart && !cart.products.includes(productId)) {
           totalPrice += Number(productInCart.price);
+          updatedProducts.push(productId);
+        } else {
+          console.log(`Product with ID ${productId} not found`);
         }
       }
-      const addData = {
-        ...body,
+
+      const addedData = await this.cartService.addToCart(cartId, {
+        products: updatedProducts,
         totalPrice: totalPrice,
-      };
-      const addedData = await this.cartService.addToCart(cartId, addData);
-      res.send(addedData);
+      });
+      res.status(201).send(addedData);
     } catch (error) {
+      console.error(error);
       res.status(400).send({ message: error.message });
     }
   }
+  
 }

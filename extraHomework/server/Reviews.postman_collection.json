@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "6dc5ed86-e0a0-45cb-a1d4-660b823bfe7d",
+		"name": "Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43059486"
+	},
+	"item": [
+		{
+			"name": "Get Review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/67ed21750c4027f337326888",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"67ed21750c4027f337326888"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/67ed235ccfd0602e7093da05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"67ed235ccfd0602e7093da05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateReview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"product\": \"67e7092c41240e24872d2ef0\",\r\n  \"userName\": \"Alex555\",\r\n  \"comment\": \"The dress is nice.\",\r\n  \"rating\": 5\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Liam Johnson UPDATE\",\r\n    \"comment\": \"The dress is nice, but it didn't fit as expected. Quality is good, though.\",\r\n    \"rating\": 5,\r\n    \"product\": \"67e7092c41240e24872d2ef0\",\r\n    \"date\": \"2025-03-30T18:45:14.899Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/reviews/67e9913a82314cdc35a386bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"reviews",
+						"67e9913a82314cdc35a386bb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
