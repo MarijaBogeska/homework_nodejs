@@ -5,6 +5,7 @@ import { connectDB } from "./config/db.js";
 import productRouter from "./routers/product.router.js";
 import reviewRouter from "./routers/review.router.js";
 import cartRouter from "./routers/cart.router.js";
+import categoryRouter from "./routers/category.router.js";
 
 dotenv.config();
 
@@ -13,9 +14,17 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
+
 app.use("/api/products", productRouter);
 app.use("/api/reviews", reviewRouter);
 app.use("/api/cart", cartRouter);
+app.use("/api/category", categoryRouter);
 
 async function startServer() {
   try {

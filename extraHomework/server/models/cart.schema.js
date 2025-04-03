@@ -10,6 +10,9 @@ const cartSchema = new Schema({
     type: Number,
     min: 0,
   },
+  date: {
+    type: Date,
+  },
 });
 
 const Cart = model("cart", cartSchema, "shoppingCarts");

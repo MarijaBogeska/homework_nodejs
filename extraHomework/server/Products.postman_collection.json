@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3000/api/products?category=67e701dc41240e24872d2935",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -26,8 +26,7 @@
 						{
 							"key": "category",
 							"value": "67e701dc41240e24872d2935",
-							"description": "Kids' Fashion",
-							"disabled": true
+							"description": "Kids' Fashion"
 						},
 						{
 							"key": "title",

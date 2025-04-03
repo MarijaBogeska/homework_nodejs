@@ -23,6 +23,15 @@ export default class CartController {
       res.status(400).send({ message: error.message });
     }
   }
+  async create(req, res) {
+    try {
+      const body = req.body;
+      const cart = await this.cartService.create(body);
+      res.send(cart);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  }
   async addToCart(req, res) {
     try {
       const cartId = req.params.id;
@@ -56,5 +65,4 @@ export default class CartController {
       res.status(400).send({ message: error.message });
     }
   }
-  
 }

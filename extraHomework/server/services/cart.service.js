@@ -11,6 +11,9 @@ export default class CartService {
     }
     return cart;
   }
+  async create(body){
+    return await Cart.create(body);
+  }
   async addToCart(cartId, body) {
     const cart = await Cart.findById(cartId);
     console.log(cart);
