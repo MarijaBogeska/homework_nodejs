@@ -5,4 +5,8 @@ export default class CategoryService {
   async getCategories(){
     return await Category.find()
   }
+  // CREATE CATEGORY
+  async createCategory(body){
+    return await Category.create(body);
+  }
 }

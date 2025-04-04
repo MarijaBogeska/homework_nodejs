@@ -5,5 +5,5 @@ const categoryRouter = Router();
 const categoryController = new CategoryController();
 
 categoryRouter.get("/", (req, res) => categoryController.getAll(req, res));
-
+categoryRouter.post("/", (req, res) => categoryController.create(req, res));
 export default categoryRouter;
